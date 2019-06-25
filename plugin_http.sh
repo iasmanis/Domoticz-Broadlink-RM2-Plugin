@@ -1,1 +1,1 @@
-nohup python /Domoticz/plugins/BroadlinkRM2/plugin_http.py $1 $2 $3 & 
+nohup python3 ./plugin_http.py $1 $2 $3 &
