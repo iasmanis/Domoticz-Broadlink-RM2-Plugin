@@ -18,7 +18,7 @@ import os
 
 #
 sendCommand = ""
-brohost = "" 
+brohost = ""
 bromac = ""
 
 #
@@ -29,14 +29,14 @@ def send():
     if not sendCommand:
         print('Nothing to send')
         sys.exit(3)
-    
+
     sendCommand = bytes.fromhex(sendCommand)
 
     try:
         device.send_data(sendCommand)
         print( "Code Sent....")
-        
-    except:    
+
+    except:
         raise
         return False
 
@@ -49,10 +49,10 @@ def broadlinkConnect():
     try:
         device = broadlink.rm(host=(brohost,80), mac=bytearray.fromhex(bromac), devtype = 'RM2')
         device.auth()
-        device.host        
-        print( "Connected to Broadlink device.")        
+        device.host
+        print( "Connected to Broadlink device.")
     except:
-        print( "Error Connecting to Broadlink device....")        
+        print( "Error Connecting to Broadlink device....")
         sys.exit(2)
 
     return True
